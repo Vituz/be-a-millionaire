@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
+    <img id="image" alt="Vue logo" src="./assets/logo.png" />
     <Container />
   </div>
 </template>
@@ -21,7 +21,17 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  color: white;
+  background-color: blue;
+  width: 100%;
+}
+
+body {
+  background-color: darkblue;
+}
+
+#image {
+  width: 20%;
+  padding: 2rem;
 }
 </style>

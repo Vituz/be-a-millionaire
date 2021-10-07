@@ -1,9 +1,13 @@
 <template>
   <div id="container">
-    <div v-if="start == true">
+    <!-- Question Container -->
+    <div class="content" v-if="start == true">
       <Domanda @result="quizResult" />
     </div>
-    <div v-else>
+    <!-- /Question Container -->
+
+    <!-- Question Result -->
+    <div class="content" v-else>
       <div v-if="result != null">
         <div :key="index" v-for="(question, index) in result">
           <p>
@@ -14,10 +18,13 @@
             Risposta Selezionata: {{ question.selected }}
           </h4>
         </div>
+        <!-- /Question Result -->
 
+        <!-- Re-start Game -->
         <button @click="startGame()">
           <h3>Start New Game</h3>
         </button>
+        <!-- /Re-start Game -->
       </div>
 
       <button v-else @click="startGame()">
@@ -62,3 +69,15 @@ export default {
   },
 };
 </script>
+
+<style lang="scss">
+#container {
+  height: 100%;
+  background-color: darkblue;
+  margin-top: 3rem;
+}
+
+.content {
+  padding: 3rem;
+}
+</style>
